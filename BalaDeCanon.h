@@ -15,10 +15,10 @@ public:
     bool posibleImpacto(int heigtTarget, pair <int, int> posicionObjeto);
     int damageDeal();
 private:
-    int _damage; //Cambiar por potencia para que el daño sea el peso x la potencia del disparo
+    int _damage;
     int _accurasi;
     int _alcance;
-    PesoBala peso;
+    PesoBala _calibre;
     pair <int, int> _puntoDeDisparo;
 };
 

@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     BalaDeCanon.cpp \
     Basese.cpp \
+    Canon.cpp \
     FilaDeCanones.cpp \
     Menu.cpp \
     Oficial.cpp \
@@ -27,6 +28,7 @@ SOURCES += \
 HEADERS += \
     BalaDeCanon.h \
     Base.h \
+    Canon.h \
     FilaDeCanones.h \
     MainWindow.h \ \
     Menu.h \

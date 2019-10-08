@@ -1,22 +1,52 @@
 #include "FilaDeCanones.h"
 
-FilaDeCanones::FilaDeCanones()
+FilaDeCanones::FilaDeCanones(Canon *parent): Canon(parent)
 {
 
 }
 
-void FilaDeCanones::apuntar(int angulo)
+void FilaDeCanones::setCanones(const Canon &modelo, int cantidad)
 {
-    cout << "Angulo apuntado " << angulo << endl;
-    _anguloDisparo = angulo;
+    setDamage(modelo.damage());
+    setAlcance(modelo.alcance());
+    setCargado(modelo.cargado());
+    _cantidad = cantidad;
 }
 
 void FilaDeCanones::disparar()
 {
-    cout << "Angulo Disparo " << _anguloDisparo << endl;
+    cout << "Disparo " << endl;
+    setCargado(false);
 }
 
 void FilaDeCanones::recargar()
 {
-    cout << "reload" << endl;
+    cout << "recargando " << endl;
+    QTimer::singleShot(_reloadTime,this, SLOT(recargado()));
+}
+
+int FilaDeCanones::reloadTime() const
+{
+    return _reloadTime;
+}
+
+void FilaDeCanones::setReloadTime(int reloadTime)
+{
+    _reloadTime = reloadTime;
+}
+
+int FilaDeCanones::accurasi() const
+{
+    return _accurasi;
+}
+
+void FilaDeCanones::setAccurasi(int accurasi)
+{
+    _accurasi = accurasi;
+}
+
+void FilaDeCanones::recargado()
+{
+    cout << "recargado " << endl;
+    setCargado(true);
 }
