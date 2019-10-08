@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <QObject>
+#include <QTimer>
 #include <Definiciones.h>
 
 using namespace std;
@@ -12,28 +13,28 @@ class Canon : public QObject
     Q_OBJECT
 public:
     Canon(QObject *parent = nullptr);
-    virtual ~Canon() = 0;
 
 public slots:
     PesoBala calibre() const;
     void setCalibre(const PesoBala &calibre);
 
-    int damage() const;
-    void setDamage(int damage);
-
-    int alcance() const;
-    void setAlcance(int alcance);
+    int velocidadImpresa() const;
+    void setVelocidadImpresa(int velocidadImpresa);
 
     bool cargado() const;
     void setCargado(bool cargado);
 
+    int reloadTime() const;
+    void setReloadTime(int reloadTime);
+
     virtual void recargar();
     virtual void disparar();
-
+private slots:
+    void recargado();
 private:
     PesoBala _calibre;
-    int _damage;
-    int _alcance;
+    int _velocidadImpresa;
+    int _reloadTime;
     bool _cargado;
 };
 

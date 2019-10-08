@@ -3,22 +3,25 @@
 
 #include <iostream>
 #include <Definiciones.h>
+#include <LanzamientoParabolico.h>
 
 using namespace std;
 
-class BalaDeCanon
+class BalaDeCanon : private LanzamientoParabolico
 {
 public:
-    BalaDeCanon();
+    BalaDeCanon(PesoBala calibre);
 
-    bool posibleImpacto(int heigtTarget, pair <int, int> posicionObjeto);
-    int damageDeal();
+    void disparase(int angulo, pair <int, int> puntoDeDisparo, int velocidadInicial);
+
+    int damage() const;
+    pair <int, int> calcularPosicionActual(int segundosDesdeDisparo);
+
+    int damageByCaliber(PesoBala calibre);
 private:
     int _damage;
-    int _accurasi;
-    int _alcance;
     PesoBala _calibre;
-    pair <int, int> _puntoDeDisparo;
+    bool _disparada;
 };
 
 #endif // BALADECANON_H

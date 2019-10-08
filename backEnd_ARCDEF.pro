@@ -20,9 +20,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     BalaDeCanon.cpp \
-    Basese.cpp \
+    Base.cpp \
     Canon.cpp \
-    FilaDeCanones.cpp \
+    LanzamientoParabolico.cpp \
+    MapaMar.cpp \
     Menu.cpp \
     Oficial.cpp \
     main.cpp \
@@ -33,8 +34,9 @@ HEADERS += \
     Base.h \
     Canon.h \
     Definiciones.h \
-    FilaDeCanones.h \
+    LanzamientoParabolico.h \
     MainWindow.h \ \
+    MapaMar.h \
     Menu.h \
     Oficial.h
 
