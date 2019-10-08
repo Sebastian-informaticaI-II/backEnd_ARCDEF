@@ -10,6 +10,7 @@ void FilaDeCanones::setCanones(const Canon &modelo, int cantidad)
     setDamage(modelo.damage());
     setAlcance(modelo.alcance());
     setCargado(modelo.cargado());
+    setCalibre(modelo.calibre());
     _cantidad = cantidad;
 }
 

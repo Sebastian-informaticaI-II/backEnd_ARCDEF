@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <QObject>
+#include <Definiciones.h>
 
 using namespace std;
 
@@ -14,6 +15,9 @@ public:
     virtual ~Canon() = 0;
 
 public slots:
+    PesoBala calibre() const;
+    void setCalibre(const PesoBala &calibre);
+
     int damage() const;
     void setDamage(int damage);
 
@@ -27,6 +31,7 @@ public slots:
     virtual void disparar();
 
 private:
+    PesoBala _calibre;
     int _damage;
     int _alcance;
     bool _cargado;

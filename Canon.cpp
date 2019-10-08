@@ -47,4 +47,14 @@ void Canon::disparar()
     cout << " disparar " << endl;
 }
 
+PesoBala Canon::calibre() const
+{
+    return _calibre;
+}
+
+void Canon::setCalibre(const PesoBala &calibre)
+{
+    _calibre = calibre;
+}
+
 

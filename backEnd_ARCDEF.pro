@@ -29,6 +29,7 @@ HEADERS += \
     BalaDeCanon.h \
     Base.h \
     Canon.h \
+    Definiciones.h \
     FilaDeCanones.h \
     MainWindow.h \ \
     Menu.h \

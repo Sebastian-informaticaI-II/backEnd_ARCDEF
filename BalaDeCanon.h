@@ -2,10 +2,9 @@
 #define BALADECANON_H
 
 #include <iostream>
+#include <Definiciones.h>
 
 using namespace std;
-
-enum PesoBala {LB_12, LB_18, LB_24, LB_36};
 
 class BalaDeCanon
 {

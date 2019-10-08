@@ -2,10 +2,9 @@
 #define OFICIAL_H
 
 #include <iostream>
+#include <Definiciones.h>
 
 using namespace std;
-
-enum TipoDeOficial {NAVEGANTE,CANON_MASTER,MEDICO,CARPINTERO};
 
 class Oficial
 {
