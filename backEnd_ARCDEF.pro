@@ -1,10 +1,10 @@
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-VERSION = 0.5.0.0
+VERSION = 0.5.1.0
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The following define makes your compiler emit warnings if you use
@@ -26,8 +26,7 @@ SOURCES += \
     MapaMar.cpp \
     Menu.cpp \
     Oficial.cpp \
-    main.cpp \
-    MainWindow.cpp
+    main.cpp
 
 HEADERS += \
     BalaDeCanon.h \
@@ -35,14 +34,12 @@ HEADERS += \
     Canon.h \
     Definiciones.h \
     LanzamientoParabolico.h \
-    MainWindow.h \ \
     MapaMar.h \
     Menu.h \
     Oficial.h
 
 
-FORMS += \
-    MainWindow.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

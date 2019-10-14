@@ -4,7 +4,7 @@
 #include <set>
 
 #include <Oficial.h>
-#include <FilaDeCanones.h>
+#include <Canon.h>
 #include <Definiciones.h>
 #include <BalaDeCanon.h>
 
@@ -23,7 +23,7 @@ private:
     string _capitan;
     TipoBase _base;
     set<Oficial> _oficiales;
-    FilaDeCanones canonesDeBase;
+    set<Canon> canonesDeBase;
     int _HP;
     int _maxHP;
     BalaDeCanon* municion;
