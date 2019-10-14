@@ -1,15 +1,15 @@
-#include "MainWindow.h"
-
 #include <QApplication>
 #include <iostream>
+#include <MapaMar.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
     if(argc == 1){
-        MainWindow w;
-        w.show();
+        MapaMar *game;
+        game = new MapaMar();
+        game->show();
         return a.exec();
     }
     std::string argumento(argv[1]);

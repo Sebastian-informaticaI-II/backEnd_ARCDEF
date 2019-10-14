@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/sounds">
+	<file alias="bullet">sonidos/bullet.mp3</file>
+	<file alias="arr">sonidos/arr.mp3</file>
+	<file alias="bgsound">sonidos/ringtones-of-caribbean.mp3</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="fondo_claro">imagenes/textura-transparente-de-agua.jpg</file>
+        <file alias="fondo_ondas">imagenes/ondas_agua.jpg</file>
+	<file alias="fondo_sumergido">imagenes/fondo.jpg</file>
+    </qresource>
+</RCC>
