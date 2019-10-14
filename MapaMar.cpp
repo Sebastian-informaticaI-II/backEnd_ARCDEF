@@ -3,12 +3,12 @@
 MapaMar::MapaMar(QWidget *parent)
 {
     scene = new QGraphicsScene();
-    scene->setSceneRect(0,0,800,600);
-    setBackgroundBrush(QBrush(QImage(":/images/fondo_claro")));
+    scene->setSceneRect(0,0,800,533);
+    setBackgroundBrush(QBrush(QImage(":/images/fondo_ondas")));
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(800,600);
+    setFixedSize(800,533);
     //------------ Agregar elementos a escena ------------
 
 

@@ -21,7 +21,6 @@ public:
 private:
     QGraphicsScene *scene;
     list<Base> naviosEnemigos;
-    list<Base> islas;
     Base player;
 };
 

@@ -26,6 +26,7 @@ SOURCES += \
     MapaMar.cpp \
     Menu.cpp \
     Oficial.cpp \
+    Registo.cpp \
     main.cpp
 
 HEADERS += \
@@ -36,10 +37,12 @@ HEADERS += \
     LanzamientoParabolico.h \
     MapaMar.h \
     Menu.h \
-    Oficial.h
+    Oficial.h \
+    Registo.h
 
 
-FORMS +=
+FORMS += \
+    Registo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
