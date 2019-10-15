@@ -24,4 +24,6 @@ enum Bando {ALIADO,ENEMIGO,NEUTRAL};
 #define PI                      3.14159265
 #define ANGULO_PI               180.0
 
+#define ARCHIVO_USUARIOS        "userFile.ini"
+
 #endif // DEFINICIONES_H

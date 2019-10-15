@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QMessageBox>
-#include <QSettings>
+#include <ArchivoUsuarios.h>
 
 namespace Ui {
 class Registo;
@@ -22,18 +22,17 @@ private slots:
 
     void on_Register_clicked();
 
-    bool confirmarUsuarioLLave(const QString &nombre,const QString &llave);
-
-    void registrarUsuario(const QString &nombre,const QString &llave);
-
+private slots:
     void campoVacio();
 
     void llaveErrada();
 
     void registroCompleto();
+
+    void usuarioExistente();
 private:
     Ui::Registo *ui;
-    QSettings* setting;
+    ArchivoUsuarios archivo;
 };
 
 #endif // REGISTO_H
