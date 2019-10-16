@@ -11,13 +11,13 @@ class LanzamientoParabolico
 {
 public:
     LanzamientoParabolico();
-    void configurarLanzamiento(int x_0,int y_0, int v_0, int anguloDisparo);
-    pair <int, int> posicionActual(int tiempo);
-    int calacularPostX(int tiempo);
-    int calacularPostY(int tiempo);
+    void configurarLanzamiento(double x_0,double y_0, double v_0, double anguloDisparo);
+    pair <double, double> posicionActual(double tiempo);
+    double calacularPostX(double tiempo);
+    double calacularPostY(double tiempo);
 private:
-    int _postX0;
-    int _postY0;
+    double _postX0;
+    double _postY0;
     double _v0x;
     double _v0y;
 };

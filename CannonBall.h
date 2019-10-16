@@ -10,7 +10,7 @@
 #include <QList>
 
 #include <Pirata.h>
-
+#include <LanzamientoParabolico.h>
 
 class CannonBall: public QObject, public QGraphicsPixmapItem
 {
@@ -19,6 +19,9 @@ public:
     CannonBall();
 public slots:
     void move();
+private:
+    double time;
+    LanzamientoParabolico* lanzado;
 };
 
 #endif // CANNONBALL_H

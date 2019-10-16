@@ -6,7 +6,7 @@ LanzamientoParabolico::LanzamientoParabolico()
 
 }
 
-void LanzamientoParabolico::configurarLanzamiento(int x_0, int y_0, int v_0, int anguloDisparo)
+void LanzamientoParabolico::configurarLanzamiento(double  x_0, double  y_0, double  v_0, double  anguloDisparo)
 {
     _postX0 = x_0;
     _postY0 = y_0;
@@ -15,23 +15,23 @@ void LanzamientoParabolico::configurarLanzamiento(int x_0, int y_0, int v_0, int
     _v0y = v_0 * sin(anguloRadianes);
 }
 
-pair<int, int> LanzamientoParabolico::posicionActual(int tiempo)
+pair<double , double > LanzamientoParabolico::posicionActual(double  tiempo)
 {
-    int postX = calacularPostX(tiempo);
-    int postY = calacularPostY(tiempo);
+    double  postX = calacularPostX(tiempo);
+    double  postY = calacularPostY(tiempo);
     return make_pair(postX,postY);
 }
 
-int LanzamientoParabolico::calacularPostX(int tiempo)
+double  LanzamientoParabolico::calacularPostX(double  tiempo)
 {
-    int desplazamiento_x = static_cast<int>(_v0x * tiempo);
+    double  desplazamiento_x = (_v0x * tiempo);
     return _postX0 + desplazamiento_x;
 }
 
-int LanzamientoParabolico::calacularPostY(int tiempo)
+double  LanzamientoParabolico::calacularPostY(double  tiempo)
 {
     double efectoGravedad = (GRAVEDAD * pow(tiempo,2)) / 2;
     double desplazamiento_y = (_v0y * tiempo) - efectoGravedad;
-    return _postY0 + static_cast<int>(desplazamiento_y);
+    return _postY0 + (desplazamiento_y);
 }
 
