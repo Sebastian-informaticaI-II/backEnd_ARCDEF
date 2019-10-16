@@ -19,12 +19,15 @@
 
 class MapaMar: public QGraphicsView
 {
+    Q_OBJECT
 public:
     MapaMar(Partida partida,QWidget * parent = nullptr);
     ~MapaMar();
     Partida obtenerPartida();
     void recibirDamage();
     void ganarPuntos();
+private slots:
+    void spawnByDif();
 private:
     QGraphicsScene *scene;
     Vida* vida;

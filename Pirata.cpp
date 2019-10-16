@@ -4,8 +4,8 @@ extern MapaMar* game;
 
 Pirata::Pirata()
 {
-    int random_number = rand() % 700;
-    setPos(random_number,0);
+    int random_number = rand() % 433;
+    setPos(800,random_number);
 
     setPixmap(QPixmap(":/images/pirata"));
 
@@ -18,8 +18,8 @@ Pirata::Pirata()
 
 void Pirata::move()
 {
-    setPos(x(),y()+5);
-    if(pos().y() > 500){
+    setPos(x()-5,y());
+    if(pos().x() < 50){
         game->recibirDamage();
         scene()->removeItem(this);
         delete this;

@@ -21,7 +21,7 @@ MapaMar::MapaMar(Partida partida, QWidget *parent): QGraphicsView(parent)
 
     //Crear Item para escena
     jugador = new BarcoJugador();
-    jugador->setPos(50,250);
+    jugador->setPos(10,250);
     jugador->setFlag(QGraphicsItem::ItemIsFocusable);
     jugador->setFocus();
 
@@ -29,7 +29,7 @@ MapaMar::MapaMar(Partida partida, QWidget *parent): QGraphicsView(parent)
     scene->addItem(jugador);
 
     QTimer * timer = new QTimer();
-    QObject::connect(timer,SIGNAL(timeout()),jugador,SLOT(spawn()));
+    QObject::connect(timer,SIGNAL(timeout()),this,SLOT(spawnByDif()));
     timer->start(2000);
     //------------- Agregar Sonido de fondo --------------
     playlist = new QMediaPlaylist();
@@ -65,4 +65,9 @@ void MapaMar::recibirDamage()
 void MapaMar::ganarPuntos()
 {
     puntos->ganarPuntos();
+}
+
+void MapaMar::spawnByDif()
+{
+    jugador->spawn(dificultdad);
 }

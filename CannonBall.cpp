@@ -28,8 +28,8 @@ void CannonBall::move()
             return;
         }
     }
-    setPos(x(),y()-10);
-    if(pos().y() < 0){
+    setPos(x()+10,y());
+    if(pos().x() > 800){
         scene()->removeItem(this);
         delete this;
     }

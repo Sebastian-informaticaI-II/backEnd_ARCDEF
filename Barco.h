@@ -16,7 +16,7 @@ public:
     BarcoJugador(QGraphicsItem * parent=0);
     void keyPressEvent(QKeyEvent * event);
 public slots:
-    void spawn();
+    void spawn(int dif);
 private:
     QMediaPlayer * bulletsound;
 };

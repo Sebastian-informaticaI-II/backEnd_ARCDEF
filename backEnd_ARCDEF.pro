@@ -4,7 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-VERSION = 0.8.0.0
+VERSION = 0.8.1.0
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The following define makes your compiler emit warnings if you use
