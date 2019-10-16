@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <ArchivoUsuarios.h>
+#include <Menu.h>
 
 namespace Ui {
 class Registo;
@@ -17,22 +18,25 @@ public:
     explicit Registo(QWidget *parent = nullptr);
     ~Registo();
 
-private slots:
+public slots:
     void on_Login_clicked();
 
     void on_Register_clicked();
 
 private slots:
-    void campoVacio();
+    void abrirMenu();
 
-    void llaveErrada();
+    void mensajeCampoVacio();
 
-    void registroCompleto();
+    void mensajeLlaveErrada();
 
-    void usuarioExistente();
+    void mensajeRegistroCompleto();
+
+    void mensajeUsuarioExistente();
 private:
     Ui::Registo *ui;
     ArchivoUsuarios archivo;
+    Menu* menu;
 };
 
 #endif // REGISTO_H

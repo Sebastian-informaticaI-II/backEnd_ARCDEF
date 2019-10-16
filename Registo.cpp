@@ -15,20 +15,18 @@ Registo::~Registo()
 
 void Registo::on_Login_clicked()
 {
-    QString nombre = ui->UserName->text();
-    QString llave = ui->Password->text();
-    if(llave.isEmpty() || nombre.isEmpty()){
-        campoVacio();
-        return;
-    }
-    bool todoBine = archivo.confirmarLogin(nombre,llave);
-    if(!todoBine){
-        llaveErrada();
-        return;
-    }
-    QMessageBox msgBox;
-    msgBox.setText("Entraste");
-    msgBox.exec();
+//    QString nombre = ui->UserName->text();
+//    QString llave = ui->Password->text();
+//    if(llave.isEmpty() || nombre.isEmpty()){
+//        mensajeCampoVacio();
+//        return;
+//    }
+//    bool todoBine = archivo.confirmarLogin(nombre,llave);
+//    if(!todoBine){
+//        mensajeLlaveErrada();
+//        return;
+//    }
+    abrirMenu();
 }
 
 void Registo::on_Register_clicked()
@@ -36,19 +34,28 @@ void Registo::on_Register_clicked()
     QString nombre = ui->UserName->text();
     QString llave = ui->Password->text();
     if(llave.isEmpty() || nombre.isEmpty()){
-        campoVacio();
+        mensajeCampoVacio();
         return;
     }
     bool ok = archivo.existeUsuario(nombre);
     if(ok){
-        usuarioExistente();
+        mensajeUsuarioExistente();
         return;
     }
     archivo.registrarUsuario(nombre,llave);
-    registroCompleto();
+    mensajeRegistroCompleto();
 }
 
-void Registo::campoVacio()
+void Registo::abrirMenu()
+{
+//    QMessageBox msgBox;
+//    msgBox.setText("Entraste");
+//    msgBox.exec();
+    menu = new Menu(this);
+    menu->show();
+}
+
+void Registo::mensajeCampoVacio()
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Warning);
@@ -56,7 +63,7 @@ void Registo::campoVacio()
     msgBox.exec();
 }
 
-void Registo::llaveErrada()
+void Registo::mensajeLlaveErrada()
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Critical);
@@ -65,7 +72,7 @@ void Registo::llaveErrada()
     ui->Password->clear();
 }
 
-void Registo::registroCompleto()
+void Registo::mensajeRegistroCompleto()
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Information);
@@ -73,7 +80,7 @@ void Registo::registroCompleto()
     msgBox.exec();
 }
 
-void Registo::usuarioExistente()
+void Registo::mensajeUsuarioExistente()
 {
     QMessageBox msgBox;
     msgBox.setIcon(QMessageBox::Critical);

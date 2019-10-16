@@ -6,7 +6,12 @@
     </qresource>
     <qresource prefix="/images">
         <file alias="fondo_claro">imagenes/textura-transparente-de-agua.jpg</file>
-        <file alias="fondo_ondas">imagenes/ondas_agua.jpg</file>
+        <file alias="fondo_ondas">imagenes/mar_aire.jpg</file>
 	<file alias="fondo_sumergido">imagenes/fondo.jpg</file>
+	<file alias="torre">imagenes/towers-gray.jpg</file>
+	<file alias="agregar">imagenes/add_2.ico</file>
+	<file alias="cargar">imagenes/cargar.ico</file>
+	<file alias="salvar">imagenes/save.ico</file>
+	<file alias="grupo">imagenes/grupo.ico</file>
     </qresource>
 </RCC>

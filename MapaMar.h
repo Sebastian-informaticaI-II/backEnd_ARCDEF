@@ -17,7 +17,7 @@
 class MapaMar: public QGraphicsView
 {
 public:
-    MapaMar(QWidget * parent=0);
+    MapaMar(QWidget * parent = nullptr);
 private:
     QGraphicsScene *scene;
     list<Base> naviosEnemigos;
