@@ -13,6 +13,7 @@
 #include <QPushButton>
 
 #include <MenuDificultad.h>
+#include <MapaMar.h>
 
 class Menu: public QGraphicsView
 {
@@ -41,6 +42,7 @@ private:
     QPushButton* partidaMultijugador;
 
     MenuDificultad* menuDificultad;
+    MapaMar* game;
 
 };
 

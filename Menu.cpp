@@ -73,7 +73,8 @@ void Menu::multijugador()
 
 void Menu::iniciarJuego()
 {
- //TODO
+    detenerMusica();
+    game = new MapaMar();
 }
 
 QPushButton *Menu::crearBotonMenu(int x, int y, const QString &icono, const QString &texto)
@@ -91,5 +92,6 @@ QPushButton *Menu::crearBotonMenu(int x, int y, const QString &icono, const QStr
 void Menu::setDificultad(int value)
 {
     dificultad = value;
+    iniciarJuego();
 }
 

@@ -10,7 +10,10 @@ MapaMar::MapaMar(QWidget *parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,533);
     //------------ Agregar elementos a escena ------------
-
+    vida = new Vida();
+    puntos = new Puntaje();
+    scene->addItem(vida);
+    scene->addItem(puntos);
 
     //------------- Agregar Sonido de fondo --------------
     QMediaPlaylist *playlist = new QMediaPlaylist();

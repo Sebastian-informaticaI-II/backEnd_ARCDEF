@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QObject>
 #include <QWidget>
+
 #include <Base.h>
 #include <Definiciones.h>
 #include <Vida.h>

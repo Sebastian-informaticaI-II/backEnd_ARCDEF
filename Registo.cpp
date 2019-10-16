@@ -49,7 +49,6 @@ void Registo::on_Register_clicked()
 void Registo::abrirMenu()
 {
     menu = new Menu(this);
-    menu->show();
 }
 
 void Registo::mensajeCampoVacio()
