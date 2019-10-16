@@ -17,7 +17,7 @@
 	<file alias="normal">imagenes/captain.ico</file>
 	<file alias="dificil">imagenes/dificil.ico</file>
 	<file alias="pirata">imagenes/pirata.ico</file>
-	<file alias="player">imagenes/barcos-png.jpg</file>
+	<file alias="player">imagenes/barco.ico</file>
 	<file alias="canonBall">imagenes/cannonBall.png</file>
     </qresource>
 </RCC>

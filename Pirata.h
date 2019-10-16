@@ -7,8 +7,6 @@
 #include <QGraphicsScene>
 #include <QDebug>
 
-#include <MapaMar.h>
-
 class Pirata: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

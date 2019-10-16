@@ -1,5 +1,5 @@
 #include "Pirata.h"
-
+#include <MapaMar.h>
 extern MapaMar* game;
 
 Pirata::Pirata()

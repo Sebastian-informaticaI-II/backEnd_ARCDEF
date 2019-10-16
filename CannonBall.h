@@ -10,7 +10,7 @@
 #include <QList>
 
 #include <Pirata.h>
-#include <MapaMar.h>
+
 
 class CannonBall: public QObject, public QGraphicsPixmapItem
 {

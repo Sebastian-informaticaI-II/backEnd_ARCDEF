@@ -18,16 +18,35 @@ MapaMar::MapaMar(Partida partida, QWidget *parent): QGraphicsView(parent)
     //------------ Agregar elementos a escena ------------
     scene->addItem(vida);
     scene->addItem(puntos);
+
+    //Crear Item para escena
+    jugador = new BarcoJugador();
+    jugador->setPos(50,250);
+    jugador->setFlag(QGraphicsItem::ItemIsFocusable);
+    jugador->setFocus();
+
+    //Agregar a escena
+    scene->addItem(jugador);
+
+    QTimer * timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),jugador,SLOT(spawn()));
+    timer->start(2000);
     //------------- Agregar Sonido de fondo --------------
-    QMediaPlaylist *playlist = new QMediaPlaylist();
+    playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/sounds/bgsound"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
-    QMediaPlayer *music = new QMediaPlayer();
+    music = new QMediaPlayer();
     music->setPlaylist(playlist);
     music->play();
     //---------------------- Mostrat ---------------------
     show();
+}
+
+MapaMar::~MapaMar()
+{
+    delete music;
+    delete playlist;
 }
 
 Partida MapaMar::obtenerPartida()

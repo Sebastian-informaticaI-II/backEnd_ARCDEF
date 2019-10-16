@@ -1,13 +1,13 @@
 #include "Barco.h"
 
-Barco::Barco(QGraphicsItem *parent): QGraphicsPixmapItem (parent)
+BarcoJugador::BarcoJugador(QGraphicsItem *parent): QGraphicsPixmapItem (parent)
 {
     bulletsound = new QMediaPlayer();
     bulletsound->setMedia(QUrl("qrc:/sounds/bullet"));
     setPixmap(QPixmap(":/images/player"));
 }
 
-void Barco::keyPressEvent(QKeyEvent *event)
+void BarcoJugador::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Left){
         if(pos().x() > 0)
@@ -31,7 +31,7 @@ void Barco::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void Barco::spawn()
+void BarcoJugador::spawn()
 {
     Pirata * enemy = new Pirata();
     scene()->addItem(enemy);

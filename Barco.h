@@ -10,10 +10,10 @@
 #include <CannonBall.h>
 #include <Pirata.h>
 
-class Barco:public QObject, public QGraphicsPixmapItem{
+class BarcoJugador: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
-    Barco(QGraphicsItem * parent=0);
+    BarcoJugador(QGraphicsItem * parent=0);
     void keyPressEvent(QKeyEvent * event);
 public slots:
     void spawn();

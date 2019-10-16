@@ -1,5 +1,5 @@
 #include "CannonBall.h"
-
+#include <MapaMar.h>
 extern MapaMar* game;
 
 CannonBall::CannonBall()
