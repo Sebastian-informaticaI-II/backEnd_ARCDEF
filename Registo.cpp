@@ -15,20 +15,19 @@ Registo::~Registo()
 
 void Registo::on_Login_clicked()
 {
-//    archivo = new ArchivoUsuarios();
-//    QString nombre = ui->UserName->text();
-//    QString llave = ui->Password->text();
-//    if(llave.isEmpty() || nombre.isEmpty()){
-//        mensajeCampoVacio();
-//        return;
-//    }
-//    bool todoBine = archivo->confirmarLogin(nombre,llave);
-//    if(!todoBine){
-//        mensajeLlaveErrada();
-//        return;
-//    }
-//    delete archivo;
-    QString nombre = "Sebastian";
+    archivo = new ArchivoUsuarios();
+    QString nombre = ui->UserName->text();
+    QString llave = ui->Password->text();
+    if(llave.isEmpty() || nombre.isEmpty()){
+        mensajeCampoVacio();
+        return;
+    }
+    bool todoBine = archivo->confirmarLogin(nombre,llave);
+    if(!todoBine){
+        mensajeLlaveErrada();
+        return;
+    }
+    delete archivo;
     abrirMenu(nombre.toStdString());
 }
 
