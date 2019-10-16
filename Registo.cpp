@@ -48,9 +48,6 @@ void Registo::on_Register_clicked()
 
 void Registo::abrirMenu()
 {
-//    QMessageBox msgBox;
-//    msgBox.setText("Entraste");
-//    msgBox.exec();
     menu = new Menu(this);
     menu->show();
 }

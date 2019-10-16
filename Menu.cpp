@@ -1,8 +1,10 @@
 #include "Menu.h"
-#include <QMessageBox>
-Menu::Menu(QWidget *parent)
+
+Menu::Menu(QWidget *parent): QGraphicsView(parent)
 {
-    QFont serifFont("Helvetica", 20, QFont::Bold);
+    menuDificultad = new MenuDificultad();
+    connect(menuDificultad,SIGNAL(dificultadElegida(int)),this,SLOT(setDificultad(int)));
+
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,375,500);
     setBackgroundBrush(QBrush(QImage(":/images/fondo_sumergido")));
@@ -10,22 +12,16 @@ Menu::Menu(QWidget *parent)
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(375,500);
-    //------------ Agregar elementos a escena ------------
+    //------------ Crear Botones del menu ------------
     iniciarNuevaPartida = crearBotonMenu(37,50,":/images/agregar","   Nueva Partida");
     salvarPartida = crearBotonMenu(37,150,":/images/salvar","Guardar Partida");
     cargarPartidaBtn = crearBotonMenu(37,250,":/images/cargar","  Cargar Partida");
     partidaMultijugador = crearBotonMenu(37,350,":/images/grupo","    Multijugador");
-    scene->addWidget(iniciarNuevaPartida);
-    scene->addWidget(salvarPartida);
-    scene->addWidget(cargarPartidaBtn);
-    scene->addWidget(partidaMultijugador);
-
-    //Conectar botones
-    connect(iniciarNuevaPartida,SIGNAL(clicked()),this,SLOT(nuevaPartida()));
+    //--------------- Conectar botones ---------------------
+    connect(iniciarNuevaPartida,SIGNAL(clicked()),this,SLOT(seleccionarDificultad()));
     connect(salvarPartida,SIGNAL(clicked()),this,SLOT(guardarPartida()));
     connect(cargarPartidaBtn,SIGNAL(clicked()),this,SLOT(cargarPartida()));
     connect(partidaMultijugador,SIGNAL(clicked()),this,SLOT(multijugador()));
-
     //------------- Agregar Sonido de fondo --------------
     playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/sounds/bgsound"));
@@ -47,6 +43,7 @@ Menu::~Menu()
     delete salvarPartida;
     delete cargarPartidaBtn;
     delete partidaMultijugador;
+    delete menuDificultad;
 }
 
 void Menu::detenerMusica()
@@ -54,9 +51,9 @@ void Menu::detenerMusica()
     music->stop();
 }
 
-void Menu::nuevaPartida()
+void Menu::seleccionarDificultad()
 {
-    //TODO
+    menuDificultad->setMenuDificultad();
 }
 
 void Menu::guardarPartida()
@@ -74,9 +71,14 @@ void Menu::multijugador()
     //TODO
 }
 
+void Menu::iniciarJuego()
+{
+ //TODO
+}
+
 QPushButton *Menu::crearBotonMenu(int x, int y, const QString &icono, const QString &texto)
 {
-    QFont serifFont("Helvetica", 20, QFont::Bold);
+    QFont serifFont("DejaVu Serif Condensed", 20, QFont::Bold);
     QPushButton* nuevoBoton = new QPushButton(texto,this);
     nuevoBoton->setGeometry(QRect(x,y,300,50));
     nuevoBoton->setFont(serifFont);
@@ -85,3 +87,9 @@ QPushButton *Menu::crearBotonMenu(int x, int y, const QString &icono, const QStr
     nuevoBoton->setFlat(true);
     return nuevoBoton;
 }
+
+void Menu::setDificultad(int value)
+{
+    dificultad = value;
+}
+

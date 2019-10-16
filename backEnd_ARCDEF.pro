@@ -4,7 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-VERSION = 0.5.6.0
+VERSION = 0.5.7.0
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The following define makes your compiler emit warnings if you use
@@ -26,6 +26,7 @@ SOURCES += \
     LanzamientoParabolico.cpp \
     MapaMar.cpp \
     Menu.cpp \
+    MenuDificultad.cpp \
     Oficial.cpp \
     Registo.cpp \
     main.cpp
@@ -39,6 +40,7 @@ HEADERS += \
     LanzamientoParabolico.h \
     MapaMar.h \
     Menu.h \
+    MenuDificultad.h \
     Oficial.h \
     Registo.h
 

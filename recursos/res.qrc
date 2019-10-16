@@ -13,5 +13,8 @@
 	<file alias="cargar">imagenes/cargar.ico</file>
 	<file alias="salvar">imagenes/save.ico</file>
 	<file alias="grupo">imagenes/grupo.ico</file>
+	<file alias="facil">imagenes/facil.ico</file>
+	<file alias="normal">imagenes/captain.ico</file>
+	<file alias="dificil">imagenes/dificil.ico</file>
     </qresource>
 </RCC>
