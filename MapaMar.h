@@ -13,6 +13,8 @@
 #include <QWidget>
 #include <Base.h>
 #include <Definiciones.h>
+#include <Vida.h>
+#include <Puntaje.h>
 
 class MapaMar: public QGraphicsView
 {
@@ -22,6 +24,8 @@ private:
     QGraphicsScene *scene;
     list<Base> naviosEnemigos;
     Base player;
+    Vida* vida;
+    Puntaje* puntos;
 };
 
 #endif // MAPAMAR_H
