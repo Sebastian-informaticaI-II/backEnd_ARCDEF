@@ -14,7 +14,7 @@ class AlmacenamientoPartidas
 {
 public:
     AlmacenamientoPartidas();
-    void guardarPartida(Partida partida);
+    void guardarPartida(const Partida &partida);
     Partida cargarPartida(string usuario);
 private:
     QSettings* setting;

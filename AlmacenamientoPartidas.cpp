@@ -5,13 +5,14 @@ AlmacenamientoPartidas::AlmacenamientoPartidas()
 
 }
 
-void AlmacenamientoPartidas::guardarPartida(Partida partida)
+void AlmacenamientoPartidas::guardarPartida(const Partida &partida)
 {
     string archivoSave = partida._usuario + TERMINACION_SAVE;
     verificarArchivoUsuarios(archivoSave);
     setting = new QSettings(QString::fromStdString(archivoSave),QSettings::IniFormat);
     setting->setValue(VIDA,partida._vida);
     setting->setValue(PUNTAJE,partida._puntos);
+    setting->setValue(DIFICULTAD,partida._dificultad);
     delete setting;
 }
 
@@ -22,8 +23,9 @@ Partida AlmacenamientoPartidas::cargarPartida(string usuario)
     setting = new QSettings(QString::fromStdString(archivoSave),QSettings::IniFormat);
     int vida = setting->value(VIDA,3).toInt();
     int puntos = setting->value(PUNTAJE,0).toInt();
+    int dificultad = setting->value(DIFICULTAD,1).toInt();
     delete setting;
-    Partida partida(vida,puntos,usuario);
+    Partida partida(vida,puntos,dificultad,usuario);
     return partida;
 }
 

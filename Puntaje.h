@@ -10,6 +10,8 @@ public:
     Puntaje(QGraphicsItem * parent=0);
     int getPuntos() const;
     void ganarPuntos();
+    void setPuntos(int value);
+
 private:
     int puntos;
 };

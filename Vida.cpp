@@ -18,3 +18,9 @@ void Vida::decrementarVida()
     vida--;
     setPlainText(QString("Vida: ")+QString::number(vida));
 }
+
+void Vida::setVida(int value)
+{
+    vida = value;
+    setPlainText(QString("Vida: ")+QString::number(vida));
+}

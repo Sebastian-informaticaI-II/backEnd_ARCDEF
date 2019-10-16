@@ -15,11 +15,19 @@ struct Partida
 {
     int _vida;
     int _puntos;
+    int _dificultad;
     std::string _usuario;
-    Partida(int vida, int puntos, const std::string &usuario) {
+    Partida(int vida, int puntos, int dificultad, const std::string &usuario) {
         _vida = vida;
         _puntos = puntos;
         _usuario = usuario;
+        _dificultad = dificultad;
+    }
+    Partida(const Partida &otro) {
+        _vida = otro._vida;
+        _puntos = otro._puntos;
+        _usuario = otro._usuario;
+        _dificultad = otro._dificultad;
     }
 };
 
@@ -42,5 +50,6 @@ struct Partida
 #define TERMINACION_SAVE        "_save.ini"
 #define VIDA                    "Vida"
 #define PUNTAJE                 "Puntaje"
+#define DIFICULTAD              "Dificultad"
 
 #endif // DEFINICIONES_H

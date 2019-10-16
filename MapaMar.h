@@ -20,13 +20,15 @@
 class MapaMar: public QGraphicsView
 {
 public:
-    MapaMar(QWidget * parent = nullptr);
+    MapaMar(Partida partida,QWidget * parent = nullptr);
+    Partida obtenerPartida();
 private:
     QGraphicsScene *scene;
     list<Base> naviosEnemigos;
     Base player;
     Vida* vida;
     Puntaje* puntos;
+    int dificultdad;
 };
 
 #endif // MAPAMAR_H

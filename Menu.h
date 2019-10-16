@@ -12,6 +12,7 @@
 #include <QWidget>
 #include <QPushButton>
 
+#include <AlmacenamientoPartidas.h>
 #include <MenuDificultad.h>
 #include <MapaMar.h>
 
@@ -19,7 +20,7 @@ class Menu: public QGraphicsView
 {
     Q_OBJECT
 public:
-    Menu(QWidget * parent = nullptr);
+    Menu(const string &usuario, QWidget * parent = nullptr);
     ~Menu();    
 public slots:
     void detenerMusica();
@@ -33,6 +34,8 @@ private slots:
     void setDificultad(int value);
 private:
     int dificultad;
+    bool juegoIniciado;
+    string _usuario;
     QGraphicsScene *scene;
     QMediaPlaylist *playlist;
     QMediaPlayer *music;
@@ -41,8 +44,10 @@ private:
     QPushButton* cargarPartidaBtn;
     QPushButton* partidaMultijugador;
 
+    Partida* partida;
     MenuDificultad* menuDificultad;
     MapaMar* game;
+    AlmacenamientoPartidas* baseDatosPartidas;
 
 };
 

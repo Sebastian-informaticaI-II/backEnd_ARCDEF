@@ -18,3 +18,9 @@ void Puntaje::ganarPuntos()
     puntos++;
     setPlainText(QString("Score: ")+QString::number(puntos));
 }
+
+void Puntaje::setPuntos(int value)
+{
+    puntos = value;
+    setPlainText(QString("Score: ")+QString::number(puntos));
+}

@@ -15,40 +15,46 @@ Registo::~Registo()
 
 void Registo::on_Login_clicked()
 {
+//    archivo = new ArchivoUsuarios();
 //    QString nombre = ui->UserName->text();
 //    QString llave = ui->Password->text();
 //    if(llave.isEmpty() || nombre.isEmpty()){
 //        mensajeCampoVacio();
 //        return;
 //    }
-//    bool todoBine = archivo.confirmarLogin(nombre,llave);
+//    bool todoBine = archivo->confirmarLogin(nombre,llave);
 //    if(!todoBine){
 //        mensajeLlaveErrada();
 //        return;
 //    }
-    abrirMenu();
+//    delete archivo;
+    QString nombre = "Sebastian";
+    abrirMenu(nombre.toStdString());
 }
 
 void Registo::on_Register_clicked()
 {
+    archivo = new ArchivoUsuarios();
     QString nombre = ui->UserName->text();
     QString llave = ui->Password->text();
     if(llave.isEmpty() || nombre.isEmpty()){
         mensajeCampoVacio();
         return;
     }
-    bool ok = archivo.existeUsuario(nombre);
+    bool ok = archivo->existeUsuario(nombre);
     if(ok){
         mensajeUsuarioExistente();
         return;
     }
-    archivo.registrarUsuario(nombre,llave);
+    archivo->registrarUsuario(nombre,llave);
     mensajeRegistroCompleto();
+    delete archivo;
 }
 
-void Registo::abrirMenu()
+void Registo::abrirMenu(const string &usuario)
 {
-    menu = new Menu(this);
+
+    menu = new Menu(usuario,this);
 }
 
 void Registo::mensajeCampoVacio()

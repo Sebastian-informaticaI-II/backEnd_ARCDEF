@@ -24,7 +24,7 @@ public slots:
     void on_Register_clicked();
 
 private slots:
-    void abrirMenu();
+    void abrirMenu(const string &usuario);
 
     void mensajeCampoVacio();
 
@@ -35,7 +35,7 @@ private slots:
     void mensajeUsuarioExistente();
 private:
     Ui::Registo *ui;
-    ArchivoUsuarios archivo;
+    ArchivoUsuarios* archivo;
     Menu* menu;
 };
 

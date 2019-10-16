@@ -10,6 +10,8 @@ public:
     Vida(QGraphicsItem * parent=0);
     int getVida() const;
     void decrementarVida();
+    void setVida(int value);
+
 private:
     int vida;
 };
