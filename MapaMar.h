@@ -12,7 +12,6 @@
 #include <QObject>
 #include <QWidget>
 
-#include <Base.h>
 #include <Definiciones.h>
 #include <Vida.h>
 #include <Puntaje.h>
@@ -22,10 +21,10 @@ class MapaMar: public QGraphicsView
 public:
     MapaMar(Partida partida,QWidget * parent = nullptr);
     Partida obtenerPartida();
+    void recibirDamage();
+    void ganarPuntos();
 private:
     QGraphicsScene *scene;
-    list<Base> naviosEnemigos;
-    Base player;
     Vida* vida;
     Puntaje* puntos;
     int dificultdad;

@@ -46,7 +46,6 @@ private:
 
     Partida* partida;
     MenuDificultad* menuDificultad;
-    MapaMar* game;
     AlmacenamientoPartidas* baseDatosPartidas;
 
 };

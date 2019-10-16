@@ -4,7 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-VERSION = 0.6.2.0
+VERSION = 0.7.0.0
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 # The following define makes your compiler emit warnings if you use
@@ -21,14 +21,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     AlmacenamientoPartidas.cpp \
     ArchivoUsuarios.cpp \
-    BalaDeCanon.cpp \
-    Base.cpp \
+    Barco.cpp \
+    CannonBall.cpp \
     Canon.cpp \
     LanzamientoParabolico.cpp \
     MapaMar.cpp \
     Menu.cpp \
     MenuDificultad.cpp \
-    Oficial.cpp \
+    Pirata.cpp \
     Puntaje.cpp \
     Registo.cpp \
     Vida.cpp \
@@ -37,15 +37,15 @@ SOURCES += \
 HEADERS += \
     AlmacenamientoPartidas.h \
     ArchivoUsuarios.h \
-    BalaDeCanon.h \
-    Base.h \
+    Barco.h \
+    CannonBall.h \
     Canon.h \
     Definiciones.h \
     LanzamientoParabolico.h \
     MapaMar.h \
     Menu.h \
     MenuDificultad.h \
-    Oficial.h \
+    Pirata.h \
     Puntaje.h \
     Registo.h \
     Vida.h

@@ -37,3 +37,13 @@ Partida MapaMar::obtenerPartida()
     Partida partida(vidap,puntosp,dificultdad,"");
     return partida;
 }
+
+void MapaMar::recibirDamage()
+{
+    vida->decrementarVida();
+}
+
+void MapaMar::ganarPuntos()
+{
+    puntos->ganarPuntos();
+}

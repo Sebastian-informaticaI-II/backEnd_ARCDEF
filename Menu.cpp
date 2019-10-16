@@ -1,5 +1,7 @@
 #include "Menu.h"
 
+MapaMar* game;
+
 Menu::Menu(const string &usuario, QWidget *parent): QGraphicsView(parent), _usuario(usuario)
 {
     juegoIniciado = false;
